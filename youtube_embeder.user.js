@@ -81,14 +81,13 @@ var clearCrap = function() {
 var setsrc = function( event ) {
 	var button = event.target;
 	var iframe = document.createElement('iframe');
-		iframe.allowfullscreen = 'allowfullscreen';
-		iframe.frameborder="1";
-		iframe.width = 450;//500;
-		iframe.height = 270;//300;
-		iframe.src = button.getAttribute('name');
-		iframe.sytle = 'padding: 5px;';	
-		iframe.onclick = setsrc;
-		//content.innerHTML = "";
+	iframe.allowfullscreen = 'allowfullscreen';
+	iframe.frameborder="1";
+	iframe.width = 450;//500;
+	iframe.height = 270;//300;
+	iframe.src = button.getAttribute('name');
+	iframe.sytle = 'padding: 5px;';	
+	iframe.onclick = setsrc;
 	
 	var div = document.createElement( 'div' );
 	div.className = EMBED_IFRAME_CLASS;
@@ -112,10 +111,6 @@ var setsrc = function( event ) {
 
 var createLoadButton = function()
 {
-	//var button = document.createElement('button');
-	//var t=document.createTextNode("Load Embeding");
-	//button.appendChild(t);
-	//button.onclick = main;
 	var appbar = document.getElementById( 'appbar-nav' );
 	var ul;
 	if( appbar != null )
@@ -135,12 +130,6 @@ var createLoadButton = function()
 	li.innerHTML = '<h2 class="epic-nav-item ">Load Embeding</h2>';
 	li.onclick = main;
 	ul.appendChild( li );
-	/*var anchor = document.createElement('a');
-	anchor.href = "/";
-	anchor.className = "yt-uix-button";
-	anchor.innerHTML = "Load Embeding";
-	anchor.onclick = main;
-	ul.appendChild( anchor );*/
 	
 }
 
@@ -163,7 +152,4 @@ var isOperationalURL = function()
 ////Lastly execute script after DOM is read iff we are on the youtube sub page
 if( isOperationalURL() ) {
 	createLoadButton();
-	//var content = document.getElementById('browse-items-primary');
-	//content.onchange = function(){ main() };
-	//document.onload = main();
 };
