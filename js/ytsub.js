@@ -1,3 +1,7 @@
+//Key is located at:
+//https://console.developers.google.com/apis/credentials?project=ytproject-141815
+//Project: YT API Key
+
 var APIKey  = "API_KEY_NOT_UPLOADED";
 
 var vlist = document.getElementById('vlist');
