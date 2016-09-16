@@ -69,6 +69,7 @@ var createVideoElement = function( data, videoID )
 		var medialeft = createElement( 'div', 'media-left');
 			var anchor = document.createElement('a');
 			anchor.setAttribute('href', 'https://www.youtube.com/embed/' + videoID + '?vq=hd720&autoplay=1&iv_load_policy=3');
+			anchor.setAttribute('target', '_blank');
 				var img = createElement('img', 'media-object');
 				img.src = imgSrc;
 				anchor.appendChild(img);
