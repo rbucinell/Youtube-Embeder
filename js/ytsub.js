@@ -1,11 +1,26 @@
-//Key is located at:
-//https://console.developers.google.com/apis/credentials?project=ytproject-141815
-//Project: YT API Key
-
-var APIKey  = "API_KEY_NOT_UPLOADED";
-
 var vlist = document.getElementById('vlist');
-	
+var showImg = true;
+		
+
+var toggleImages = function()
+{
+	if( showImg )
+	{
+		$("img").css("display", "none");
+		showImg = false;
+	}
+	else
+	{
+		$("img").css("display", "block");
+		showImg = true;
+		scrollToBottom();
+	}
+}		
+
+var scrollToBottom = function()
+{
+	$('html, body').animate({scrollTop:$(document).height()}, 'slow');
+}
 				
 var closemodalClick = function( processData )
 {
@@ -53,7 +68,7 @@ var createVideoElement = function( data, videoID )
 	
 		var medialeft = createElement( 'div', 'media-left');
 			var anchor = document.createElement('a');
-			anchor.setAttribute('href', 'https://www.youtube.com/embed/' + videoID + '?vq=hd720&autoplay-1&iv_load_policy=3');
+			anchor.setAttribute('href', 'https://www.youtube.com/embed/' + videoID + '?vq=hd720&autoplay=1&iv_load_policy=3');
 				var img = createElement('img', 'media-object');
 				img.src = imgSrc;
 				anchor.appendChild(img);
@@ -101,6 +116,7 @@ var createCloseBadge = function()
 
 var getPublishDate = function( videoID )
 {
+	var APIKey  = "AIzaSyCU6hEwe3LQ5pF3RbkJI-s1pkayzljjajc";
 	var baseURL = "https://www.googleapis.com/youtube/v3/videos";
 	
 	var snippet;
